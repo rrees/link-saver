@@ -17,5 +17,5 @@ def require_authorisation():
         or not check_credentials(auth.username, auth.password)
     ):
         return flask.Response(
-            "Please login", 401, {"WWW-Authenticate": 'Basic realm="contact-sport"'}
+            "Please login", 401, {"WWW-Authenticate": 'Basic realm="link-saver"'}
         )
