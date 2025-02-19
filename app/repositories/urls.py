@@ -17,3 +17,11 @@ def create(url, notes=None, tags=None):
             cursor.execute(urls_sql.insert, params)
 
             return cursor.fetchone().get("row")
+
+
+def all():
+    with connect() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(urls_sql.all)
+
+            return [row for row in cursor]

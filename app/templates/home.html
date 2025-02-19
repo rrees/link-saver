@@ -1,0 +1,15 @@
+{% extends 'default.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+	<h1>Home</h1>
+
+	{% include 'fragments/add-link-form.html' %}
+
+	{% for link in links %}
+	{{link}}
+	{% endfor %}
+</div>
+{% endblock %}

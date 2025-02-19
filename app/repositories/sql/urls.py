@@ -12,3 +12,9 @@ ON CONFLICT DO NOTHING
 RETURNING (id, external_id)
 ;
 """
+
+all = """
+SELECT *
+FROM links
+ORDER BY created DESC
+"""
