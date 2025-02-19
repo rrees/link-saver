@@ -13,8 +13,8 @@ CREATE TABLE IF NOT EXISTS links (
 	id INT GENERATED ALWAYS AS IDENTITY,
 	external_id uuid UNIQUE NOT NULL DEFAULT gen_random_uuid (),
 	url text NOT NULL,
-	notes text NOT NULL,
-	tags text[],
+	notes text NULL,
+	tags text[] NULL,
 	created timestamp default current_timestamp,
 	updated timestamp default current_timestamp
 );
