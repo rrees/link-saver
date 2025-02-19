@@ -9,7 +9,7 @@ def link_form_submission():
     form = LinkForm(flask.request.form)
 
     if form.validate():
-        urls_repository.create(form.url.data)
+        urls_repository.create(form.url.data, form.notes.data, form.tags.data)
         return flask.redirect(flask.url_for("front_page"))
 
     return flask.abort(400, "Invalid form submission")

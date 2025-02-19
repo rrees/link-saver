@@ -10,6 +10,9 @@ def create(url, notes=None, tags=None):
     if not tags:
         tags = []
 
+    if isinstance(tags, str):
+        tags = tags.split()
+
     params = {"url": url, "notes": notes, "tags": tags}
 
     with connect() as conn:
