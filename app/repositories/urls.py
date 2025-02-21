@@ -28,3 +28,13 @@ def all():
             cursor.execute(urls_sql.all)
 
             return [row for row in cursor]
+
+
+def by_tag(tag_name):
+    params = {"tag_name": tag_name}
+
+    with connect() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(urls_sql.tagged, params)
+
+            return [row for row in cursor]
