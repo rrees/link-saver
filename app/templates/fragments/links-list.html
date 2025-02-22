@@ -1,0 +1,19 @@
+
+<ul class="list-group">
+	{% for link in links %}
+		<li class="list-group-item border-0 border-bottom">
+			<p><a href="{{link.url}}">{{link.url}}</a></p>
+			{% if link.notes %}
+			<p>{{link.notes}}</p>
+			{% endif %}
+			{% if link.tags %}
+			<div class="hstack gap-3">
+				<span>Tags:</span>
+				{% for tag in link.tags %}
+				<a href="{{url_for('links_by_tag', tag_name=tag)}}">{{tag}}</a>
+				{% endfor %}
+			</div>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

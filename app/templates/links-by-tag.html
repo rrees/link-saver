@@ -7,19 +7,7 @@
 	<h1>Posts tagged {{tag_name}}</h1>
 
 	{% if links %}
-	<ul class="list-group">
-		{% for link in links %}
-			<li class="list-group-item">
-				<p><a href="{{link.url}}">{{link.url}}</a></p>
-				{% if link.notes %}
-				<p>{{link.notes}}</p>
-				{% endif %}
-				{% if link.tags %}
-				<p>{{link.tags | join(' ')}}</p>
-				{% endif %}
-			</li>
-		{% endfor %}
-	</ul>
+	{% include 'fragments/links-list.html' %}
 	{% else %}
 	<p>No posts are tagged {{tag_name}}</p>
 	{% endif %}

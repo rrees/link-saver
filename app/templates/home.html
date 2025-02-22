@@ -6,27 +6,19 @@
 <div class="container">
 	<h1>Home</h1>
 
-	<details>
-		<summary>Add link</summary>
+	<div class="mb-3">
+		<h2>Add link</h2>
+		<details>
+			<summary>Show form</summary>
 
-		{% include 'fragments/add-link-form.html' %}
+			{% include 'fragments/add-link-form.html' %}
 
-	</details>
+		</details>
+	</div>
 
 	{% if links %}
-	<ul class="list-group">
-		{% for link in links %}
-			<li class="list-group-item">
-				<p><a href="{{link.url}}">{{link.url}}</a></p>
-				{% if link.notes %}
-				<p>{{link.notes}}</p>
-				{% endif %}
-				{% if link.tags %}
-				<p>{{link.tags | join(' ')}}</p>
-				{% endif %}
-			</li>
-		{% endfor %}
-	</ul>
+	<h2>Links</h2>
+	{% include 'fragments/links-list.html' %}
 	{% endif %}
 
 </div>
