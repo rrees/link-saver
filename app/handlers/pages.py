@@ -14,6 +14,12 @@ def home():
     return flask.render_template("home.html", links=links)
 
 
+def links():
+    links = urls_repository.all()
+
+    return flask.render_template("links.html", links=links)
+
+
 def tag(tag_name):
     return flask.render_template(
         "links-by-tag.html", tag_name=tag_name, links=urls_repository.by_tag(tag_name)
