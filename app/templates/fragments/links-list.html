@@ -1,7 +1,7 @@
 
 <ul class="list-group">
 	{% for link in links %}
-		<li class="list-group-item border-0 border-bottom">
+		<li class="list-group-item border-0 border-bottom {% if loop.index % 2 == 1 %}list-group-item-light{% endif %}">
 			<p><a href="{{link.url}}">{{link.url}}</a></p>
 			{% if link.notes %}
 			<p>{{link.notes}}</p>

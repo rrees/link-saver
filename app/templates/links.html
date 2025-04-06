@@ -1,15 +1,15 @@
 {% extends 'default.html' %}
 
-{% block title %}Links tagged {{tag_name}}{% endblock %}
+{% block title %}Links{% endblock %}
 
 {% block content %}
 <div class="container">
-	<h1>Links tagged {{tag_name}}</h1>
+	<h1>All Links</h1>
 
 	{% if links %}
 	{% include 'fragments/links-list.html' %}
 	{% else %}
-	<p>No links are tagged {{tag_name}}</p>
+	<p>No links have been saved</p>
 	{% endif %}
 
 </div>
